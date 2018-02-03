@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">  
+	<link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+	<div class="bk"></div>
+	<div id="app">
+		<img class="icon-sound" :src="iconSound" @click="toggleSound"></img>
+		<audio autoplay="autoplay" ref="bakMusic" loop>
+			<source src="./bak.mp3" type="audio/mpeg" />
+		</audio>
+		<audio ref="bakMusicGet">
+			<source src="./get.mp3" type="audio/mpeg" />
+		</audio>
+		<div class="wrapper" ref="wrapper" :style="objStyle" id="wrapper">
+			<avators :data="persons"></avators>
+			<div class="content">
+				<div id="startbtn"></div>
+			</div>
+		</div>
+		<div class="arrow"></div>
+		<div class="btnstart" @click="startAnimation" ref="btnstart">{{onAnimation?'停止':'开始'}}</div>
+		<div class="button-group">
+			<el-select v-model="currentPrize" placeholder="请选择奖项" :class="'prize-select'">
+				<el-option
+				  v-for="item in prizes"
+				  :key="item.name"
+				  :label="item.name"
+				  :value="item.name"
+				  :disabled="!item.remain">
+				</el-option>
+			</el-select>
+			<el-button type="primary" class="setting" @click="openShowList">查询</el-button>
+			<el-button type="primary" class="setting" @click="openSetting">设置</el-button>
+			<div class="gamemode">
+				<el-radio v-model="gamemode" label="1">手动抽奖</el-radio>
+				<el-radio v-model="gamemode" label="2">自动抽奖</el-radio>
+			</div>
+		</div>
+		<el-dialog title="中奖名单" custom-class="dialog-prize" :visible.sync="showList" :close-on-click-modal="false">
+			<el-table :data="luckyPersons" ref="listTable" header-row-class-name="head-row" stripe border empty-text="还没有人中奖哦" style="width: 100%;">
+				<el-table-column label="姓名">
+					<template slot-scope="scope">
+						<div class="photo-wrapper">
+							<img :src="scope.row.picUrl" class="photo">
+							<span class="photo-name">{{scope.row.person}}</span>
+						</div>
+					</template>
+				</el-table-column>
+				<el-table-column prop="name" label="奖项"></el-table-column>
+				<el-table-column prop="award" label="奖品"></el-table-column>
+			</el-table>
+		</el-dialog>
+		<el-dialog title="中奖了" custom-class="dialog-prize" :visible.sync="showPrize" :close-on-click-modal="false">
+			<img :src="prizeSrc" class="prize-photo" /><br/>
+			<span class="prize-text">{{tip}}</span>
+		</el-dialog>
+		<el-dialog title="配置" custom-class="dialog-prize" :visible.sync="setting" :close-on-click-modal="false">
+			<el-table :data="prizes" ref="prizeTable" header-row-class-name="head-row" stripe border empty-text="没有奖项信息" style="width:100%;margin-bottom: 40px;">
+				<el-table-column prop="name" label="奖项"> </el-table-column>
+				<el-table-column prop="award" label="奖品"> </el-table-column>
+				<el-table-column prop="count" label="总数"> </el-table-column>
+				<el-table-column prop="remain" label="剩余"> </el-table-column>
+				<el-table-column label="">
+					<template slot-scope="scope">
+						<el-button @click="deletePrize(scope.row)" type="text">删除</el-button> 
+					</template>
+				</el-table-column>
+			</el-table>
+			<el-form :model="form" :inline="true">
+				<el-form-item label="奖项" label-width="120">
+					<el-input v-model="form.name" auto-complete="off"></el-input>
+				</el-form-item>
+				<el-form-item label="奖品" label-width="120">
+					<el-input v-model="form.award" auto-complete="off"></el-input>
+				</el-form-item>
+				<el-form-item label="数量" label-width="120">
+					<el-input-number v-model="form.count" :min="1"></el-input-number>
+				</el-form-item>
+				<el-form-item>
+					<el-button type="primary" @click="add">添加</el-button>
+				</el-form-item>
+			</el-form>
+			
+			<el-button type="primary" class="setting" @click="reset">重新抽奖</el-button>
+			<el-button type="primary" class="setting" @click="allreset">全部重置</el-button>
+		</el-dialog>
+	</div>
+	
+	<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+	<script src="./util.js"></script>
+	<script src="./config.js"></script>
+	<script src="./vue.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="./LuckPrize.js"></script>
+</body>
+</html>

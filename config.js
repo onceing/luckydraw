@@ -1,0 +1,35 @@
+﻿let persons = [
+    { name: '1', picUrl: './avator/1.jpg' },
+    { name: '2', picUrl: './avator/2.jpg' },
+    { name: '3', picUrl: './avator/3.jpg' },
+    { name: '4', picUrl: './avator/4.jpg' },
+    { name: '5', picUrl: './avator/5.jpg' },
+    { name: '6', picUrl: './avator/6.jpg' },
+    { name: '7', picUrl: './avator/7.jpg' },
+    { name: '8', picUrl: './avator/8.jpg' },
+    { name: '9', picUrl: './avator/9.jpg' },
+    { name: '10', picUrl: './avator/10.jpg' },
+    { name: '11', picUrl: './avator/11.jpg' },
+    { name: '12', picUrl: './avator/12.jpg' },
+    { name: '13', picUrl: './avator/13.jpg' },
+    { name: '14', picUrl: './avator/14.jpg' },
+    { name: '15', picUrl: './avator/15.jpg' },
+    { name: '16', picUrl: './avator/16.jpg' },
+    { name: '17', picUrl: './avator/17.jpg' },
+    { name: '18', picUrl: './avator/18.jpg' },
+    { name: '19', picUrl: './avator/19.jpg' },
+    { name: '20', picUrl: './avator/20.jpg' },
+    { name: '21', picUrl: './avator/21.jpg' },
+    { name: '22', picUrl: './avator/22.jpg' },
+    { name: '23', picUrl: './avator/23.jpg' },
+    { name: '24', picUrl: './avator/24.jpg' },
+    { name: '25', picUrl: './avator/25.jpg' },
+    { name: '26', picUrl: './avator/26.jpg' },
+    { name: '27', picUrl: './avator/27.jpg' },
+    { name: '28', picUrl: './avator/28.jpg' },
+    { name: '29', picUrl: './avator/29.jpg' },
+]
+
+const r1 = 450;
+const r2 = 300;
+const d = 100;

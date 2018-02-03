@@ -1,0 +1,248 @@
+body {
+
+
+}
+
+div.bk{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    /* filter: blur(10px);
+    -webkit-filter: blur(10px); */
+    background-image: url('./Pic/bk1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper{
+    background-color: rgba(235, 63, 47, .5);
+    width: 900px;
+    height: 900px;
+    left: 50%;
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -450px; 
+    position: fixed;
+    z-index: 1;
+    border-radius: 50%;
+    background-image: url('./Pic/hj.png');
+    background-size: 750px 750px;
+    background-repeat: no-repeat;
+    background-position: 75px 75px;
+}
+
+.content{
+    background-color: transparent;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -300px;
+    position: fixed;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.avator-wrapper{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(204, 204, 204, .5);
+}
+
+.avator {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 74px;
+    height: 74px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: whtie;
+    background-size: cover;
+}
+
+div.arrow{
+    height: 0;
+    width: 0;
+    position: fixed;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;
+    margin-top: -375px;
+    z-index: 11;
+    border-bottom: 375px gold solid;
+    border-left: 25px transparent solid;
+    border-right: 25px transparent solid;
+    /* animation: bounce 10s cubic-bezier(.54,.11,.58,1.16);
+    animation-iteration-count: infinite; */
+}
+
+@-webkit-keyframes bounce {
+    0% { border-bottom-color: gold }
+    20% { border-bottom-color: red }
+    40% {border-bottom-color: green }
+    60% { border-bottom-color: blueviolet }
+    80% {border-bottom-color: yellowgreen }
+    100% {border-bottom-color: gold }
+}
+
+@-webkit-keyframes rotate-one {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1720deg);
+    }
+}
+
+.rotate-wrapper {
+    animation: rotate-one 10s cubic-bezier(.72,.27,.51,1.16);
+    -webkit-animation: rotate-one 10s cubic-bezier(.72,.27,.51,1.16);
+}
+
+#startbtn{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F8F8F8;
+    margin: 250px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.setting{
+
+}
+
+.button-group{
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    z-index: 99;
+}
+
+.prize-select{
+    margin-right: 10px;
+}
+table{
+    width: 100%;
+}
+
+.photo-wrapper{
+    height: 160px;
+    width: 90px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+}
+
+.photo {
+    height: 160px;
+    width: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.photo-name{
+    width: 90px;
+    height: 25px;
+    text-align: center;
+    background-color: rgba(204, 204, 204, .7);
+    line-height: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btnstart{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: wheat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 12;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(214, 31, 31, 0.4);
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnstart.disabled{
+    background-color: gray;
+    cursor: default;
+}
+
+.gamemode {
+    padding: 10px 8px;
+}
+
+@keyframes circle {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+
+.circle {
+    animation: circle 0.6s linear;
+    animation-iteration-count: infinite;
+}
+
+.icon-sound{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 120
+}
+
+.dialog-prize{
+    border-image: repeating-linear-gradient(-45deg,#e66465 0,#e66465 10px,#f6b73c 10px,#f6b73c 20px,#e66465 20px) 20 20 repeat !important;
+    background-color: #ffe7e8;
+    border: 10px solid #e66465;
+    padding: 24px;
+    border-width: 20px;
+    text-align: center;
+}
+
+.dialog-prize .el-dialog__headerbtn{
+    top: 0 !important;
+    right: -70px !important;
+    background-color: #e66465;
+    color: #fff;
+    padding: 5px;
+}
+
+.dialog-prize .el-dialog__headerbtn .el-dialog__close{
+    color: #fff;
+    font-size: 30px;
+}
+
+.dialog-prize .el-dialog__title{
+    color: #e66465;
+    font-size: 25px;
+}
+
+.prize-photo {
+    height: 480px;
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+}
+
+.dialog-prize .prize-text{
+    display: block;
+    color: #e66465;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.head-row th{
+    text-align: center;
+}
